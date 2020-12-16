@@ -1,0 +1,412 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>辣椒短视频</title>
+
+<!--    <script src="js/jquery.min.js"></script>-->
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            color: #fff;
+            background: transparent;
+            border: none;
+        }
+
+        body {
+            background: #141414;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .wrap {
+            max-width: 830px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 58px;
+            height: 80px;
+            text-transform: uppercase;
+            font-weight: 700;
+            overflow: hidden;
+            line-height: 4;
+            margin-bottom: 30px;
+            -webkit-transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            height: 30px;
+            overflow: hidden;
+            line-height: 4;
+            -webkit-transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+            margin-bottom: 10px;
+            transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            height: 120px;
+            overflow: hidden;
+            line-height: 40;
+            -webkit-transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+            margin-bottom: 10px;
+            transition: line-height 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        h1 {
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        h2 {
+            /*margin-top: -6px;*/
+            font-weight: 600;
+            font-size: 1.5em;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        h3 {
+            margin-top: -5px;
+            font-weight: 300;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        .two {
+            text-align: right;
+        }
+
+        /*.two .cta {*/
+        /*    float: right;*/
+        /*}*/
+
+        .section.active h1 {
+            line-height: 1;
+            -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+        }
+
+        .section.active h2 {
+            line-height: 1;
+            -webkit-transition-delay: .8s;
+            transition-delay: .8s;
+        }
+
+        .section.active h3 {
+            line-height: 1.5;
+            -webkit-transition-delay: 1.3s;
+            transition-delay: 1.3s;
+        }
+
+        .section.active .cta {
+            opacity: 1;
+            transform: translateX(0px);
+            -webkit-transform: translateX(0px);
+            -moz-transform: translateX(0px);
+        }
+
+        .cta {
+            -webkit-transition: all 0.85s cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+            transition: all 0.85s cubic-bezier(0.77, 0, 0.175, 1) 1.4s;
+            display: block;
+            cursor: pointer;
+            width: 175px;
+            height: 50px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            -webkit-transform: translateX(-30px);
+            -moz-transform: translateX(-30px);
+        }
+
+        .cta:before {
+            content: "";
+            opacity: 0.2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 175px;
+            height: 50px;
+            transition: 0.4s all ease-out;
+            -webkit-transition: 0.4s all ease-out;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhbHF1ZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE3NSA1MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTc1IDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE2OCw0OC41IDcsNDguNSAxLjUsNDIuMyAxLjUsNy43IDcsMS41IDE2OCwxLjUgMTczLjUsNy43IDE3My41LDQyLjMgIi8+PC9zdmc+);
+        }
+
+        .cta:after {
+            content: ">";
+            opacity: 0.3;
+            color: #fff;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 40px;
+            transition: 0.3s all ease-out;
+            -webkit-transition: 0.3s all ease-out;
+        }
+
+        .cta span {
+            color: #fff;
+            text-align: center;
+            width: 80%;
+            display: block;
+            font-size: 14px;
+            height: 50px;
+            line-height: 50px;
+            font-weight: 500;
+            transition: 0.3s all ease-out;
+            -webkit-transition: 0.3s all ease-out;
+        }
+
+        .cta:hover span {
+            width: 100%;
+        }
+
+        .cta:hover:before {
+            opacity: 0.5;
+        }
+
+        .cta:hover:after {
+            opacity: 0;
+            right: 0px;
+            transition: 0.2s all ease-out;
+            -webkit-transition: 0.2s all ease-out;
+        }
+
+        #fp-nav ul li a.active span,
+        .fp-slidesNav ul li a.active span,
+        #fp-nav ul li:hover a.active span,
+        .fp-slidesNav ul li:hover a.active span {
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+            border-radius: 0;
+            background: transparent;
+            border: solid 1px #fff;
+        }
+
+        #fp-nav ul li a span,
+        .fp-slidesNav ul li a span {
+            border-radius: 0;
+            position: absolute;
+            z-index: 1;
+            height: 4px;
+            width: 4px;
+            border: 0;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            margin: -2px 0 0 -2px;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+
+        #fp-nav ul li,
+        .fp-slidesNav ul li {
+            height: 43px;
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+<div id="fullpage">
+    <div class="section one">
+        <div class="glass">
+            <div class="wrap">
+                <h1>辣椒短视频</h1>
+                <h2>开启有趣旅程</h2>
+                <div class="cta"><span>立即下载</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="section two">
+        <div class="glass">
+            <div class="wrap">
+
+                <h1>WhatS 辣椒短视频？</h1>
+                <h2>一个蕴含众多有趣灵魂的魔性APP</h2>
+
+                <h3 style="padding-bottom: 50px">
+                    辣椒短视频，是一款主打"汇集有趣灵魂，探索快乐源泉"的素人艺术创意APP，在这里用户可以尽情施展灵感、发表摄影作品、影视作品、音乐作品、甚至可以连载一部网络小说！
+                    浏览其他用户发表的内容还能赚取金币，所赚金币自动转现，刷的多赚的多，邀请好友更可领取现金奖励，各种趣味活动随时更新，一起玩一起赚，和有趣的灵魂在一起探索辣椒短视频术！
+                </h3>
+                <div class="cta"><span>立即下载</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="section three">
+        <div class="glass">
+            <div class="wrap">
+                <h1> 业 务 范 围 </h1>
+                <h2>超微博客</h2>
+                <h3>
+                    超微博客，是一种互联网内容传播方式，一般是在互联网新媒体上传自创的照片、文字、音乐、和5分钟左右的短视频；随着移动终端普及和网络的提速，短平快的大流量传播内容逐渐获得各大平台、粉丝和资本的青睐。</h3>
+                <h2>直播</h2>
+                <h3>电视现场直播为在现场随着事件的发生、发展进程同时制作和播出电视节目的播出方式，是充分体现广播电视媒介传播优势的播出方式。直播在国外就是LIVE。</h3>
+                <h2>电商</h2>
+                <h3>随着国内外互联网使用人数的增加，利用互联网进行网络购物并以银行卡付款的消费方式已渐趋流行，市场份额也在迅速增长，各种类型的电商网站也将层出不穷。</h3>
+                <h2>广告</h2>
+                <h3>广告是传播信息的一种方式，其目的在于推销商品、劳务服务、取得政治支持、推进一种事业或引起刊登广告者所希望的其他的反映。广告信息通过各种宣传工具，传递给它所想要吸引的观众或听众。</h3>
+                <div class="cta"><span>立即下载</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="section four">
+        <div class="glass">
+            <div class="wrap">
+                <h1>合 作 伙 伴</h1>
+                <div class="page4_partners">
+                    <table>
+
+                        <tr>
+                            <td><img class="img10"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%281%29.png"/>
+                            </td>
+                            <td><img class="img11"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%282%29.png"/>
+                            </td>
+                            <td><img class="img12"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%283%29.png"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:;" style="cursor: auto;"><img class="img7"
+                                                                                  src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%284%29.png"/></a>
+                            </td>
+                            <td><img class="img8"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%285%29.png"/>
+                            </td>
+                            <td><img class="img9"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%286%29.png"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img class="img1"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%287%29.png"/>
+                            </td>
+                            <td><img class="img2"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%288%29.png"/>
+                            </td>
+                            <td><img class="img3"
+                                     src="https://study0769.oss-cn-beijing.aliyuncs.com/background/comp-logo%20%289%29.png"/>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="cta"><span>立即下载</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="section five">
+        <div class="glass">
+            <div class="wrap">
+                <h1>联 系 我 们</h1>
+                <img src="https://study0769.oss-cn-beijing.aliyuncs.com/background/locationx.png"/>
+                <h2>福建省厦门市湖里区蔡塘广场</h2>
+                <img src="https://study0769.oss-cn-beijing.aliyuncs.com/background/email.png"/>
+                <h2>tokopoo@qq.com</h2>
+                <div class="cta"><span>立即下载</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .glass {
+        padding: 100px;
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 3px 35px #000;
+    }
+
+    .one {
+        background-image: url(https://study0769.oss-cn-beijing.aliyuncs.com/background/1.jpg);
+        background-size: cover;
+    }
+
+    .two {
+        background-image: url(https://study0769.oss-cn-beijing.aliyuncs.com/background/2.jpg);
+        background-size: cover;
+    }
+
+    .three {
+        background-image: url(https://study0769.oss-cn-beijing.aliyuncs.com/background/3.jpg);
+        background-size: cover;
+    }
+
+    .four {
+        background-image: url(https://study0769.oss-cn-beijing.aliyuncs.com/background/4%20%282%29.jpg);
+        background-size: cover;
+    }
+
+    .five {
+        background-image: url(https://study0769.oss-cn-beijing.aliyuncs.com/background/5.jpg);
+        background-size: cover;
+    }
+
+    .five h2 {
+        margin-top: 20px;
+    }
+
+    .five .cta {
+        margin-top: 50px;
+    }
+
+    .page4_partners {
+        overflow: hidden;
+    }
+
+    .page4_partners table {
+        width: 100%;
+        margin: 0 auto;
+        /*text-align: center;*/
+    }
+
+    .page4_partners table tr td:nth-child(2) {
+        padding: 50px 120px;
+    }
+
+    .page4_partners table tr td:nth-child(2) {
+        padding: 50px 120px;
+    }
+
+    .page4_partners table tr td img {
+        width: 180px;
+        height: 50px;
+    }
+</style>
+<script type="text/javascript">
+    (function () {
+        $('#fullpage').fullpage({
+            navigation: true,
+        });
+    })();
+</script>
+
+</body>
+</html>
